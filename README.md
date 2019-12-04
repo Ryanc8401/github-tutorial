@@ -23,14 +23,26 @@ _What is a repo? Local vs Global?_
 ---
 ## Initial Setup
 
-### Step 0: Get a github account
+Before we start getting into git you'll have to make a github account and set up your ide, which are additional step you need to do. If you haven't already go github and create an accounr or click [here](http://github.com) then you'll need to setup your ide which we're going to do after.
 
-Create a github account [here](http://github.com) (accounts are free) then go to [IDECS50](ide.cs50.io) and login with your github account
+1. You need to enter your information
+    * Register an account by making a username, password, and entering your email address
+    * Choose a wise username and password so you can remember it later one when you're logging back on
 
-Follow the steps [here](https://github.com/hstatsep/ide50) to set up your IDECS50
+2. Choose the beginner plan (It's free)
 
-### Whats is SSH?
+3. Complete your setup
+    * Answer the question to your own person perferences and click the _complete stepup_ button whenever you're done. This is really an opitional step so you can do it if you want or not
 
+4. Verify your email
+    * Go log on your email and verify your github account to make your that you're the person who making the account and not anyone 
+
+
+After when your finish making your github account you need to setup your ide which stands for integrated development environment which is the place that you'll be writing your code in and your work. An ide is a sandbox that you have in your deposial that you can mess around without making any mistake whatever you want. Rather then using your terminal on your computer an ide is much safer since making mistake won't harm your computer then the terminal where it can do permanent damage on your computer. There other ide that you can run your code in but we're are working with this one since it's free; however every ide is different since it all work different where there benefits and drawbacks. 
+
+Go to [IDECS50](ide.cs50.io) and login with your github account and follow the steps [here](https://github.com/hstatsep/ide50) to set up your IDECS50
+
+> ### Whats is SSH?
 > SSH stands for Secure SHell which goes through a protocal to help someone safety access the net.
 
 ---
@@ -47,6 +59,18 @@ After when you add everything onto the stage by using `git add .` you have to be
 ---
 ## Workflow & Commands
 
+After you set up your github and ide you can already start writing your code by using the thing that were said in the repo set up, but we'll be going over it again to make sure that you're getting the hand of it. When you're working no matter which step you're in always do `git status` to check what was edit and change so you'll be able to track your changes over time. 
+
+Start by making a a directory that you'll be working on by using the command `mkdir < file name >` and go into the folder by using `cd < file name >`. Now follow closetly make your folder into a parent function by using `git init` so you can start adding stuff into it and now pay attention do `touch < file name >` to make a file that you'll be making edits in; for example, a google docs that you can write your stuff in. Follow by that do `c9 < file name> ` to get into it so you can start by making some changes.
+
+When your finish making your changes you have to add them on to the stage before taking a _snapshot_ do `git add .` to add your change onto the stage so it can be prepare. After you add them onto the stage do `git commit -m "< message >"` to commit your change and don't forget to add a message so you can be able to track your change later. Always check `git status`!
+
+Now what do you do after your make your commits? You wonder can you show off your awesome work to the public? Yes you can. Go log on github if you haven't and go to the top left corner of the page you'll see a green button that saids `new`. Click that to make a new repo so you can store in within a server rather then locally within your computer which can get lost. After you click the green button name your repo the same name as your parent function and add a description if you want. Check the box below if you want to make the repo online if you want but right now we not so don't check it off. Copy the first link it should look like this `git remote add origin git@github.com:< your username >/kjwd.git` and after copy the second link `git push -u origin master` to push it into github. When you finish you're all done and don't forget to always to `git status` to check your progress, also to present your great work always also do `git push` to push it to github.
+
+If you ever make a mistake you would start panicking but don't worry `rm -rf < file name >` is here to save you. You can used that to delete file if you can a mistake and want to redo everything; however, it's a double edge sword beacause you can accidently delete everything so be careful whenever you are using it. Since you read all the through here I'll give you a extra thing you can used that can benefit you. If you ever want to change your name of your directory use `mv < current name > < new name >`.
+
+
+In the bottom are some additional command that you might need when you are programming but I won't go indept into them so take a look or quick glance at them.
 
 
 Command | Explaination
@@ -72,6 +96,12 @@ Command | Explaination
 
 ---
 ## Rolling Back Changes
+
+Let me give you a scenario what happen if you stage someone you don't want to stage and want to kick them off or you already took a picture that you weren't ment to take you do have a change to redo your mistake! Eventhough you can use `git log` and `git revert` to go back to your last commit but it can't work in every scenario since what if you only want to make a small change back and don't want to make a huge jump back to the beginning. You can use `git checkout -- < file name >` to undo a stage that you have added neat right. Do `git status` once more to check if your file change from green to red so you can know that you had made changes. To double check used `git diff` to see your current and compare to your previous to see what had changed.
+
+What if you already check them out and took their picture and you regret that you have done it. You want to remove the picture off the camera. Used the command `git reset --hard HEAD^` to undo a commit you have already done. To undo mulitple commit add the number after head for example HEAD ~ 1 and etc. Just make sure that you're looking back at your previous commit just in case if you don't make a mistake.
+
+You can just always do `git log` and then `git revert < numbers >` if you didn't make much change. In below are brief explaination if you don't understand what I've said above.
 
 #### Undo Edits
 
